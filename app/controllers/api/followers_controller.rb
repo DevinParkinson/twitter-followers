@@ -2,7 +2,7 @@ class Api::FollowersController < ApplicationController
   before_action :client
 
   def index
-    followers = @client.followers.take(10).collect do |follower|
+    followers = @client.followers.take(20).collect do |follower|
       { id: follower.id, name: follower.name, img: follower.profile_image_url.to_s }
     end
 
